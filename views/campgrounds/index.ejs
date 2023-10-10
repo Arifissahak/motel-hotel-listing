@@ -1,0 +1,57 @@
+<% layout('layouts/boilerplate')%>
+
+<body style="background-color: black;">
+    <h1 style="text-align: center; font-weight: bold; font-family: Arial, Helvetica, sans-serif;">ALL M O T E L 's</h1>
+<div class="container-fluid mt-5">
+    <div class="row">
+    <% for (let campground of campgrounds){%>
+        <!-- <div class="container-fluid">
+            <div class="card mb-3" >
+                <div class="row">
+                    <div class="col-md-4">
+                        <%if(campground.images.length) {%>
+                        <img crossorigin="anonymous" class="img-fluid" alt="" src="<%=campground.images[0].url%>">
+                        <% }else {%>
+                        <img crossorigin="anonymous" class="img-fluid" alt=""
+                            src="https://res.cloudinary.com/douqbebwk/image/upload/v1600103881/YelpCamp/lz8jjv2gyynjil7lswf4.png">
+                        <% } %>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= campground.title %> </h5>
+                            <p class="card-text"><%= campground.description %></p>
+                            <p class="card-text">
+                                <small class="text-muted"><%= campground.location%></small>
+                            </p>
+                            <a class="btn btn-primary" href="/campgrounds/<%=campground._id%>">View <%=campground.title%></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+            
+                <div class="col-md-4 mt-5">
+                    <div class="card bg-transparent" style="width: 18rem;">
+                        <%if(campground.images.length) {%>
+                            <img crossorigin="anonymous" class="img-fluid" alt="" src="<%=campground.images[0].url%>">
+                            <% }else {%>
+                            <img crossorigin="anonymous" class="img-fluid" alt=""
+                                src="https://res.cloudinary.com/douqbebwk/image/upload/v1600103881/YelpCamp/lz8jjv2gyynjil7lswf4.png">
+                            <% } %>
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: rgb(136, 136, 136); font-weight: bold; text-transform: uppercase;"><%= campground.title %> </h5>
+                            <p class="card-text" style="color: rgb(136, 136, 136);"><%= campground.description %></p>
+                            <p class="card-text">
+                                <small class="text-muted"><%= campground.location%></small>
+                            </p>
+                            <a class="btn btn-dark" style="text-transform: uppercase; font-weight: 900; background-color: #2225afb5; border: none;" href="/campgrounds/<%=campground._id%>">View <%=campground.title%></a>
+                        </div>
+                      </div>
+                </div>
+           
+        
+        <% }%>
+    </div>
+</div>
+</body>
+
